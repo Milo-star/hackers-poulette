@@ -1,1 +1,22 @@
-/*# sourceMappingURL=main.css.map */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(189, 185, 185);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  margin: 1vw;
+  max-width: 50%;
+}
+
+input {
+  padding: 2vh;
+  border-radius: 0.3rem;
+  border: none;
+}/*# sourceMappingURL=main.css.map */
