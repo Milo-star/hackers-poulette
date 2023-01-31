@@ -1,4 +1,16 @@
 <?php
+include "db.php";
+
+    $errorMsg = array(
+    'errorName' => 'Name incorrect',
+    'errorName2' => 'Votre nom doit contenir entre 2 et 250 caractères',
+    'errorFirstname' => 'Votre prénom ne peut contenir que des lettres',
+    'errorFisrtname2' => 'Votre prénom doit contenir entre 2 et 250 caractères',
+    'errorEmail' => "Le format de l'adresse e-mail est incorrect.",
+    'errorComment' => 'Votre nom doit contenir entre 2 et 250 caractères'
+);
+    $arraySave = array();
+
     if(isset($_POST["submit"])) {
         $inputs = array(
             "firstname" => FILTER_SANITIZE_STRING,
@@ -25,16 +37,16 @@
 <body>
     <form action="verif-form.php" class="form">
         <label for="firstname">Firstname:</label>
-        <input type="text" id="firstname" name="firstname">
-
-        <label for="lastname">Lastname:</label>
-        <input type="text" id="lastname" name="lastname">
+        <input type="text" id="firstname" name="firstname" value="<?php echo isset($_POST["firstname"]) ? $_POST["firstname"] : ''; ?>">
         
+        <label for="lastname">Lastname:</label>
+        <input type="text" id="name" name="name" value="<?php echo isset($_POST["name"]) ? $_POST["name"] : ''; ?>">
+
         <label for="email">Email adress:</label>
-        <input type="email" id="email" name="email">
+        <input type="text" id="email" name="email" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : ''; ?>">        
         
         <label for="comment">Comment:</label>
-        <textarea id="comment" name="comment"></textarea>
+        <textarea id="comment" name="comment"><?php echo isset($_POST["comment"]) ? $_POST["comment"] : ''; ?></textarea>        
         
         <input type="submit" value="Envoyer">
     </form>
